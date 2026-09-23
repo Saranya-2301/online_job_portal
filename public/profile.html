@@ -1,47 +1,431 @@
 <!DOCTYPE html>
-
-<html>
+<html lang="en">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Profile</title>
+    <title>My Profile | JobMatch</title>
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
 
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body>
+<body class="dashboard-page">
 
-<header>
+    <!-- NAVBAR -->
 
-    <h1>My Profile</h1>
+    <header class="navbar">
 
-</header>
+        <div class="nav-container">
+
+            <a href="index.html" class="logo">
+                <span class="logo-icon">J</span>
+                <span>JobMatch</span>
+            </a>
+
+            <nav class="nav-links">
+
+                <a href="index.html">
+                    Home
+                </a>
+
+                <a href="jobs.html">
+                    Jobs
+                </a>
+
+                <a href="profile.html" class="active">
+                    Profile
+                </a>
+
+                <a href="recruiter.html">
+                    Recruiter
+                </a>
+
+            </nav>
+
+            <div class="nav-actions">
+
+                <a href="jobs.html" class="profile-button">
+                    Find Jobs
+                </a>
+
+            </div>
+
+        </div>
+
+    </header>
 
 
-<main>
+    <!-- DASHBOARD -->
 
-    <div class="profile-card">
+    <main class="dashboard-main">
 
-        <h2 id="profileName"></h2>
+        <div class="dashboard-container">
 
-        <p id="profileEmail"></p>
+            <!-- PAGE TITLE -->
 
-        <h3>My Skills</h3>
+            <div class="dashboard-heading">
 
-        <div id="skills"></div>
+                <div>
 
-    </div>
+                    <span class="section-label">
+                        CANDIDATE DASHBOARD
+                    </span>
+
+                    <h1>
+                        My Profile
+                    </h1>
+
+                    <p>
+                        Manage your profile, skills and job applications.
+                    </p>
+
+                </div>
+
+                <a
+                    href="jobs.html"
+                    class="dashboard-action"
+                >
+                    Explore Jobs →
+                </a>
+
+            </div>
 
 
-    <h2>My Applications</h2>
+            <!-- PROFILE + STATS -->
 
-    <div id="applications"></div>
+            <div class="dashboard-top-grid">
 
-</main>
+                <!-- PROFILE CARD -->
+
+                <section class="profile-card">
+
+                    <div class="profile-cover"></div>
+
+                    <div class="profile-content">
+
+                        <div class="profile-avatar">
+                            👤
+                        </div>
+
+                        <div class="profile-details">
+
+                            <h2 id="profileName">
+                                Candidate
+                            </h2>
+
+                            <p id="profileEmail">
+                                Loading profile...
+                            </p>
+
+                            <span class="profile-role">
+                                Job Seeker
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </section>
 
 
-<script src="script.js"></script>
+                <!-- PROFILE COMPLETION -->
+
+                <section class="completion-card">
+
+                    <div class="completion-header">
+
+                        <div>
+
+                            <span>
+                                Profile Completion
+                            </span>
+
+                            <strong id="completionPercent">
+                                75%
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                    <div class="progress-bar">
+
+                        <div
+                            class="progress-fill"
+                            id="profileProgress"
+                        ></div>
+
+                    </div>
+
+                    <p>
+                        Complete your profile to receive
+                        better job recommendations.
+                    </p>
+
+                </section>
+
+            </div>
+
+
+            <!-- STATS -->
+
+            <div class="dashboard-stats">
+
+                <div class="dashboard-stat">
+
+                    <div class="stat-icon blue">
+                        💼
+                    </div>
+
+                    <div>
+
+                        <strong id="recommendedCount">
+                            0
+                        </strong>
+
+                        <span>
+                            Recommended Jobs
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="dashboard-stat">
+
+                    <div class="stat-icon green">
+                        ✓
+                    </div>
+
+                    <div>
+
+                        <strong id="applicationCount">
+                            0
+                        </strong>
+
+                        <span>
+                            Applications
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="dashboard-stat">
+
+                    <div class="stat-icon purple">
+                        ⚡
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Active
+                        </strong>
+
+                        <span>
+                            Profile Status
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- CONTENT -->
+
+            <div class="dashboard-content-grid">
+
+                <!-- SKILLS -->
+
+                <section class="dashboard-card">
+
+                    <div class="card-heading">
+
+                        <div>
+
+                            <span class="section-label">
+                                YOUR SKILLS
+                            </span>
+
+                            <h2>
+                                Skills & Expertise
+                            </h2>
+
+                        </div>
+
+                    </div>
+
+                    <div
+                        id="skills"
+                        class="skills-list"
+                    >
+
+                        <span class="skill-tag">
+                            Loading...
+                        </span>
+
+                    </div>
+
+                </section>
+
+
+                <!-- APPLICATIONS -->
+
+                <section class="dashboard-card">
+
+                    <div class="card-heading">
+
+                        <div>
+
+                            <span class="section-label">
+                                APPLICATIONS
+                            </span>
+
+                            <h2>
+                                Recent Applications
+                            </h2>
+
+                        </div>
+
+                    </div>
+
+                    <div id="applications">
+
+                        <div class="application-empty">
+
+                            <div>
+                                📄
+                            </div>
+
+                            <p>
+                                Your applications will appear here.
+                            </p>
+
+                            <a href="jobs.html">
+                                Browse Jobs
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+            </div>
+
+
+            <!-- RECOMMENDATIONS -->
+
+            <section class="dashboard-card recommendations-card">
+
+                <div class="card-heading">
+
+                    <div>
+
+                        <span class="section-label">
+                            AI-ASSISTED MATCHING
+                        </span>
+
+                        <h2>
+                            Jobs Recommended For You
+                        </h2>
+
+                        <p>
+                            Opportunities selected using your
+                            skills and profile information.
+                        </p>
+
+                    </div>
+
+                    <a href="jobs.html">
+                        View All →
+                    </a>
+
+                </div>
+
+                <div
+                    id="profileRecommendations"
+                    class="recommendation-grid"
+                >
+
+                    <div class="recommendation-loading">
+                        Finding matching jobs...
+                    </div>
+
+                </div>
+
+            </section>
+
+        </div>
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer class="footer">
+
+        <div class="footer-container">
+
+            <div>
+
+                <div class="logo footer-logo">
+
+                    <span class="logo-icon">
+                        J
+                    </span>
+
+                    <span>
+                        JobMatch
+                    </span>
+
+                </div>
+
+                <p>
+                    Connecting skills with the right opportunities.
+                </p>
+
+            </div>
+
+            <div class="footer-links">
+
+                <a href="index.html">
+                    Home
+                </a>
+
+                <a href="jobs.html">
+                    Jobs
+                </a>
+
+                <a href="profile.html">
+                    Profile
+                </a>
+
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            © 2026 JobMatch. All rights reserved.
+        </div>
+
+    </footer>
+
+
+    <script src="script.js"></script>
 
 </body>
 
