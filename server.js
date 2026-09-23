@@ -328,10 +328,8 @@ app.post("/api/jobs", function(req, res) {
 });
 
 
-app.listen(5000, function() {
+const port = process.env.PORT || 5000;
 
-    console.log(
-        "Server running at http://localhost:5000"
-    );
-
+app.listen(port, "0.0.0.0", function() {
+    console.log("Server running on port " + port);
 });
