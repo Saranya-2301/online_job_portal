@@ -1,42 +1,269 @@
 <!DOCTYPE html>
-
-<html>
+<html lang="en">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Recommended Jobs</title>
+    <title>Jobs | JobMatch</title>
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
-<header>
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <div class="nav-container">
 
-    <h1>Recommended Jobs</h1>
+            <a href="index.html" class="logo">
+                <span class="logo-icon">J</span>
+                <span>JobMatch</span>
+            </a>
 
-    <nav>
+            <nav class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="jobs.html" class="active">Jobs</a>
+                <a href="profile.html">Profile</a>
+                <a href="recruiter.html">Recruiter</a>
+            </nav>
 
-        <a href="index.html">Home</a>
+            <div class="nav-actions">
+                <a href="profile.html" class="profile-button">
+                    My Profile
+                </a>
+            </div>
 
-        <a href="profile.html">Profile</a>
-
-    </nav>
-
-</header>
-
-
-<main>
-
-    <h2>Your Job Recommendations</h2>
-
-    <div id="jobs"></div>
-
-</main>
+        </div>
+    </header>
 
 
-<script src="script.js"></script>
+    <!-- PAGE HEADER -->
+    <section class="jobs-hero">
+
+        <div class="jobs-container">
+
+            <div class="jobs-heading">
+
+                <span class="section-label">
+                    CAREER OPPORTUNITIES
+                </span>
+
+                <h1>
+                    Find jobs that
+                    <span>match your skills.</span>
+                </h1>
+
+                <p>
+                    Discover opportunities recommended based on your
+                    skills, experience and career interests.
+                </p>
+
+            </div>
+
+
+            <!-- SEARCH AREA -->
+            <div class="job-search-box">
+
+                <div class="search-input">
+
+                    <span>⌕</span>
+
+                    <input
+                        type="text"
+                        id="jobSearch"
+                        placeholder="Search by job title, company or skill"
+                    >
+
+                </div>
+
+                <button
+                    type="button"
+                    onclick="filterJobs()"
+                    class="search-button"
+                >
+                    Search Jobs
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- JOB CONTENT -->
+    <main class="jobs-main">
+
+        <div class="jobs-container">
+
+            <!-- TOP BAR -->
+            <div class="jobs-topbar">
+
+                <div>
+                    <span class="section-label">
+                        PERSONALIZED FOR YOU
+                    </span>
+
+                    <h2>
+                        Recommended Jobs
+                    </h2>
+                </div>
+
+                <div class="job-count" id="jobCount">
+                    Finding opportunities...
+                </div>
+
+            </div>
+
+
+            <!-- LOADING -->
+            <div id="jobsLoading" class="jobs-loading">
+
+                <div class="loading-spinner"></div>
+
+                <p>
+                    Finding jobs that match your skills...
+                </p>
+
+            </div>
+
+
+            <!-- JOB CARDS -->
+            <div id="jobs" class="jobs-grid"></div>
+
+
+            <!-- EMPTY STATE -->
+            <div
+                id="noJobs"
+                class="no-jobs"
+                style="display:none;"
+            >
+
+                <div class="empty-icon">
+                    🔎
+                </div>
+
+                <h3>
+                    No matching jobs found
+                </h3>
+
+                <p>
+                    Try searching for another role, company or skill.
+                </p>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer class="footer">
+
+        <div class="footer-container">
+
+            <div>
+                <div class="logo footer-logo">
+                    <span class="logo-icon">J</span>
+                    <span>JobMatch</span>
+                </div>
+
+                <p>
+                    Connecting skills with the right opportunities.
+                </p>
+            </div>
+
+            <div class="footer-links">
+
+                <a href="index.html">Home</a>
+                <a href="jobs.html">Jobs</a>
+                <a href="profile.html">Profile</a>
+
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            © 2026 JobMatch. All rights reserved.
+        </div>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+    <script>
+
+        function filterJobs() {
+
+            const search =
+                document.getElementById("jobSearch")
+                    .value
+                    .toLowerCase()
+                    .trim();
+
+            const cards =
+                document.querySelectorAll(".job-card");
+
+            let visible = 0;
+
+            cards.forEach(function(card) {
+
+                const text =
+                    card.innerText.toLowerCase();
+
+                if (text.includes(search)) {
+
+                    card.style.display = "";
+
+                    visible++;
+
+                } else {
+
+                    card.style.display = "none";
+
+                }
+
+            });
+
+            const noJobs =
+                document.getElementById("noJobs");
+
+            if (visible === 0) {
+
+                noJobs.style.display = "block";
+
+            } else {
+
+                noJobs.style.display = "none";
+
+            }
+
+        }
+
+        document
+            .getElementById("jobSearch")
+            .addEventListener("keyup", function(event) {
+
+                if (event.key === "Enter") {
+
+                    filterJobs();
+
+                }
+
+            });
+
+    </script>
 
 </body>
 
