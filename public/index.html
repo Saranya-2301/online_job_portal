@@ -1,91 +1,273 @@
 <!DOCTYPE html>
-
-<html>
-
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Job Portal</title>
+    <title>JobMatch | Find Jobs That Match Your Skills</title>
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
-<header>
+    <nav class="navbar">
 
-    <h1>JobMatch</h1>
+        <div class="logo">
+            <span class="logo-icon">J</span>
+            Job<span>Match</span>
+        </div>
 
-    <nav>
-
-        <a href="index.html">Home</a>
-
-        <a href="jobs.html">Jobs</a>
-
-        <a href="profile.html">Profile</a>
-
-        <a href="login.html">Login</a>
+        <div class="nav-links">
+            <a href="index.html" class="active">Home</a>
+            <a href="jobs.html">Jobs</a>
+            <a href="login.html">Login</a>
+            <a href="register.html" class="nav-register">Get Started</a>
+        </div>
 
     </nav>
 
-</header>
+
+    <main>
+
+        <!-- HERO -->
+
+        <section class="hero">
+
+            <div class="hero-content">
+
+                <div class="hero-badge">
+                    <span>✦</span>
+                    Smart job matching powered by your skills
+                </div>
+
+                <h1>
+                    Find a job that
+                    <span>matches you.</span>
+                </h1>
+
+                <p>
+                    Discover opportunities based on your skills, interests,
+                    and career goals. Search smarter and find your next
+                    opportunity faster.
+                </p>
+
+                <div class="hero-buttons">
+
+                    <a href="jobs.html" class="primary-btn">
+                        Explore Jobs
+                        <span>→</span>
+                    </a>
+
+                    <a href="register.html" class="secondary-btn">
+                        Create Account
+                    </a>
+
+                </div>
+
+                <div class="hero-stats">
+
+                    <div class="stat">
+                        <strong>1,200+</strong>
+                        <span>Jobs Available</span>
+                    </div>
+
+                    <div class="stat">
+                        <strong>500+</strong>
+                        <span>Companies</span>
+                    </div>
+
+                    <div class="stat">
+                        <strong>95%</strong>
+                        <span>Skill Matching</span>
+                    </div>
+
+                </div>
+
+            </div>
 
 
-<section class="hero">
+            <div class="hero-visual">
 
-    <h2>Find Your Perfect Job</h2>
+                <div class="floating-card card-one">
+                    <div class="mini-icon blue">💼</div>
+                    <div>
+                        <strong>Software Engineer</strong>
+                        <small>12 new openings</small>
+                    </div>
+                </div>
 
-    <p>
-        Get job recommendations based on your skills.
-    </p>
+                <div class="job-preview">
 
-    <a href="jobs.html">
+                    <div class="preview-top">
+                        <div class="company-logo">G</div>
 
-        <button>
-            Find Jobs
-        </button>
+                        <div>
+                            <h3>Software Engineer</h3>
+                            <p>Technology Company</p>
+                        </div>
 
-    </a>
+                        <span class="bookmark">♡</span>
+                    </div>
 
-</section>
+                    <div class="preview-location">
+                        📍 Hyderabad &nbsp; • &nbsp; Full Time
+                    </div>
+
+                    <div class="skills">
+                        <span>Java</span>
+                        <span>SQL</span>
+                        <span>React</span>
+                    </div>
+
+                    <div class="preview-bottom">
+                        <strong>₹8–12 LPA</strong>
+                        <span class="match">92% Match</span>
+                    </div>
+
+                </div>
+
+                <div class="floating-card card-two">
+                    <div class="mini-icon green">✓</div>
+                    <div>
+                        <strong>92% Match</strong>
+                        <small>Based on your skills</small>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
 
 
-<section class="features">
+        <!-- FEATURES -->
 
-    <div>
+        <section class="features-section">
 
-        <h3>Skill Matching</h3>
+            <div class="section-heading">
 
-        <p>
-            Match your skills with job requirements.
-        </p>
+                <span class="section-label">WHY JOBMATCH</span>
 
-    </div>
+                <h2>
+                    Your skills.
+                    <span>Your opportunities.</span>
+                </h2>
 
+                <p>
+                    Everything you need to discover and apply for jobs
+                    that fit your profile.
+                </p>
 
-    <div>
-
-        <h3>Smart Recommendations</h3>
-
-        <p>
-            Get jobs ranked according to your skills.
-        </p>
-
-    </div>
+            </div>
 
 
-    <div>
+            <div class="features-grid">
 
-        <h3>Easy Applications</h3>
+                <div class="feature-card">
 
-        <p>
-            Apply to suitable jobs easily.
-        </p>
+                    <div class="feature-icon blue-icon">
+                        🎯
+                    </div>
 
-    </div>
+                    <h3>Skill-Based Matching</h3>
 
-</section>
+                    <p>
+                        Find jobs that align with your technical skills
+                        and experience using intelligent matching logic.
+                    </p>
+
+                </div>
+
+
+                <div class="feature-card">
+
+                    <div class="feature-icon purple-icon">
+                        ⚡
+                    </div>
+
+                    <h3>Smart Recommendations</h3>
+
+                    <p>
+                        Get personalized job recommendations based on
+                        your skills and career preferences.
+                    </p>
+
+                </div>
+
+
+                <div class="feature-card">
+
+                    <div class="feature-icon green-icon">
+                        🚀
+                    </div>
+
+                    <h3>Easy Applications</h3>
+
+                    <p>
+                        Discover opportunities and apply through a
+                        simple and streamlined application process.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- CTA -->
+
+        <section class="cta-section">
+
+            <div>
+
+                <span class="section-label">START YOUR JOURNEY</span>
+
+                <h2>
+                    Your next opportunity
+                    <br>
+                    could be one click away.
+                </h2>
+
+                <p>
+                    Create your profile and let your skills
+                    open the right doors.
+                </p>
+
+            </div>
+
+            <a href="register.html" class="cta-btn">
+                Get Started →
+            </a>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <div class="footer-content">
+
+            <div class="footer-logo">
+                Job<span>Match</span>
+            </div>
+
+            <p>
+                Connecting skills with opportunities.
+            </p>
+
+            <span>
+                © 2026 JobMatch
+            </span>
+
+        </div>
+
+    </footer>
 
 </body>
-
 </html>
