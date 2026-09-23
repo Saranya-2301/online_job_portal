@@ -1,57 +1,274 @@
 <!DOCTYPE html>
-
-<html>
+<html lang="en">
 
 <head>
 
-    <title>Login</title>
+    <meta charset="UTF-8">
 
-    <link rel="stylesheet" href="style.css">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Login | JobMatch</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="css/style.css">
 
 </head>
 
-<body>
+<body class="auth-page">
 
-<header>
+    <!-- NAVBAR -->
 
-    <h1>JobMatch</h1>
+    <header class="navbar">
 
-</header>
+        <div class="nav-container">
+
+            <a href="index.html" class="logo">
+
+                <span class="logo-icon">J</span>
+
+                <span>JobMatch</span>
+
+            </a>
+
+            <nav class="nav-links">
+
+                <a href="index.html">
+                    Home
+                </a>
+
+                <a href="jobs.html">
+                    Jobs
+                </a>
+
+            </nav>
+
+            <div class="nav-actions">
+
+                <a
+                    href="register.html"
+                    class="profile-button"
+                >
+                    Create Account
+                </a>
+
+            </div>
+
+        </div>
+
+    </header>
 
 
-<div class="form-container">
+    <!-- LOGIN -->
 
-    <h2>Login</h2>
+    <main class="auth-main">
 
-    <input
-        type="email"
-        id="email"
-        placeholder="Email"
-    >
+        <div class="auth-layout">
 
-    <input
-        type="password"
-        id="password"
-        placeholder="Password"
-    >
+            <!-- LEFT SIDE -->
 
-    <button onclick="login()">
-        Login
-    </button>
+            <section class="auth-info">
 
-    <p id="message"></p>
+                <span class="section-label">
+                    WELCOME BACK
+                </span>
 
-    <p>
-        Don't have an account?
-        <a href="register.html">
-            Register
-        </a>
-    </p>
+                <h1>
+                    Find your next
+                    <span>opportunity.</span>
+                </h1>
 
-</div>
+                <p>
+                    Sign in to discover jobs matched to your
+                    skills and track your applications in one place.
+                </p>
+
+                <div class="auth-benefits">
+
+                    <div class="auth-benefit">
+
+                        <div class="benefit-icon">
+                            ✓
+                        </div>
+
+                        <div>
+                            <strong>
+                                Skill-based matching
+                            </strong>
+
+                            <p>
+                                Discover roles that fit your skills.
+                            </p>
+                        </div>
+
+                    </div>
 
 
-<script src="script.js"></script>
+                    <div class="auth-benefit">
+
+                        <div class="benefit-icon">
+                            ✓
+                        </div>
+
+                        <div>
+                            <strong>
+                                Track applications
+                            </strong>
+
+                            <p>
+                                Keep your applications organized.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="auth-benefit">
+
+                        <div class="benefit-icon">
+                            ✓
+                        </div>
+
+                        <div>
+                            <strong>
+                                Career opportunities
+                            </strong>
+
+                            <p>
+                                Explore relevant jobs from employers.
+                            </p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- LOGIN CARD -->
+
+            <section class="auth-card">
+
+                <div class="auth-card-header">
+
+                    <div class="auth-icon">
+                        🔐
+                    </div>
+
+                    <h2>
+                        Welcome back
+                    </h2>
+
+                    <p>
+                        Sign in to your JobMatch account
+                    </p>
+
+                </div>
+
+
+                <form
+                    onsubmit="event.preventDefault(); login();"
+                >
+
+                    <div class="form-group">
+
+                        <label for="email">
+                            Email Address
+                        </label>
+
+                        <input
+                            type="email"
+                            id="email"
+                            placeholder="you@example.com"
+                            autocomplete="email"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <div class="password-label">
+
+                            <label for="password">
+                                Password
+                            </label>
+
+                        </div>
+
+                        <input
+                            type="password"
+                            id="password"
+                            placeholder="Enter your password"
+                            autocomplete="current-password"
+                            required
+                        >
+
+                    </div>
+
+
+                    <button
+                        type="submit"
+                        class="auth-button"
+                    >
+                        Sign In
+                    </button>
+
+                </form>
+
+
+                <div
+                    id="message"
+                    class="auth-message"
+                ></div>
+
+
+                <div class="auth-divider">
+
+                    <span>OR</span>
+
+                </div>
+
+
+                <p class="auth-register">
+
+                    Don't have an account?
+
+                    <a href="register.html">
+                        Create one
+                    </a>
+
+                </p>
+
+            </section>
+
+        </div>
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer class="auth-footer">
+
+        <p>
+            © 2026 JobMatch. Connecting skills with opportunities.
+        </p>
+
+    </footer>
+
+
+    <script src="script.js"></script>
 
 </body>
 
