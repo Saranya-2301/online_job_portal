@@ -2,35 +2,41 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
     <title>Recruiter Dashboard | JobMatch</title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
         rel="stylesheet"
+        href="css/style.css"
     >
 
-    <link rel="stylesheet" href="css/style.css">
 </head>
+
 
 <body class="recruiter-page">
 
+
     <!-- NAVBAR -->
 
-    <header class="navbar">
+    <nav class="navbar">
 
         <div class="nav-container">
 
-            <a href="index.html" class="logo">
-                <span class="logo-icon">J</span>
-                <span>JobMatch</span>
+            <a
+                href="index.html"
+                class="logo"
+            >
+                JobMatch
             </a>
 
-            <nav class="nav-links">
+            <div class="nav-links">
 
                 <a href="index.html">
                     Home
@@ -41,26 +47,22 @@
                 </a>
 
                 <a href="profile.html">
-                    Candidate
+                    Profile
                 </a>
 
-                <a href="recruiter.html" class="active">
+                <a
+                    href="recruiter.html"
+                    class="active"
+                >
                     Recruiter
-                </a>
-
-            </nav>
-
-            <div class="nav-actions">
-
-                <a href="jobs.html" class="profile-button">
-                    View Jobs
                 </a>
 
             </div>
 
         </div>
 
-    </header>
+    </nav>
+
 
 
     <!-- MAIN -->
@@ -68,6 +70,7 @@
     <main class="recruiter-main">
 
         <div class="recruiter-container">
+
 
             <!-- HEADER -->
 
@@ -80,17 +83,19 @@
                     </span>
 
                     <h1>
-                        Recruit smarter.
+                        Find the right talent.
                     </h1>
 
                     <p>
-                        Manage your job openings and discover candidates
-                        whose skills match your requirements.
+                        Create job opportunities and connect
+                        with candidates based on their skills.
                     </p>
 
                 </div>
 
+
                 <button
+                    type="button"
                     class="post-job-button"
                     onclick="openJobForm()"
                 >
@@ -100,24 +105,27 @@
             </div>
 
 
+
             <!-- STATS -->
 
-            <div class="recruiter-stats">
+            <section class="recruiter-stats">
 
                 <div class="recruiter-stat">
 
-                    <div class="recruiter-stat-icon blue">
+                    <div class="stat-icon">
                         💼
                     </div>
 
                     <div>
-                        <strong id="recruiterJobs">
-                            0
-                        </strong>
 
                         <span>
                             Active Jobs
                         </span>
+
+                        <strong id="recruiterJobs">
+                            0
+                        </strong>
+
                     </div>
 
                 </div>
@@ -125,18 +133,20 @@
 
                 <div class="recruiter-stat">
 
-                    <div class="recruiter-stat-icon green">
+                    <div class="stat-icon">
                         👥
                     </div>
 
                     <div>
-                        <strong id="recruiterApplications">
-                            0
-                        </strong>
 
                         <span>
                             Applications
                         </span>
+
+                        <strong id="recruiterApplications">
+                            0
+                        </strong>
+
                     </div>
 
                 </div>
@@ -144,50 +154,56 @@
 
                 <div class="recruiter-stat">
 
-                    <div class="recruiter-stat-icon purple">
+                    <div class="stat-icon">
                         🎯
                     </div>
 
                     <div>
-                        <strong>
-                            Skill Match
-                        </strong>
 
                         <span>
-                            Candidate Matching
+                            Skill Matching
                         </span>
+
+                        <strong>
+                            Active
+                        </strong>
+
                     </div>
 
                 </div>
 
-            </div>
+            </section>
 
 
-            <!-- JOB POSTING FORM -->
+
+            <!-- JOB FORM -->
 
             <section
                 id="jobForm"
-                class="recruiter-card job-form-card"
-                style="display:none;"
+                class="job-form-card"
+                style="display: none;"
             >
 
-                <div class="recruiter-card-header">
+                <div class="card-header">
 
                     <div>
-
-                        <span class="section-label">
-                            NEW OPPORTUNITY
-                        </span>
 
                         <h2>
                             Post a New Job
                         </h2>
 
+                        <p>
+                            Add the job details and required skills.
+                        </p>
+
                     </div>
 
+
                     <button
+                        type="button"
                         class="close-button"
                         onclick="closeJobForm()"
+                        aria-label="Close"
                     >
                         ×
                     </button>
@@ -197,20 +213,23 @@
 
                 <form
                     id="postJobForm"
-                    onsubmit="submitJob(event)"
+                    onsubmit="event.preventDefault(); postJob();"
                 >
 
                     <div class="form-grid">
 
+
+                        <!-- JOB TITLE -->
+
                         <div class="form-group">
 
-                            <label>
+                            <label for="jobTitle">
                                 Job Title
                             </label>
 
                             <input
-                                id="jobTitle"
                                 type="text"
+                                id="jobTitle"
                                 placeholder="e.g. Software Engineer"
                                 required
                             >
@@ -218,91 +237,118 @@
                         </div>
 
 
+
+                        <!-- COMPANY -->
+
                         <div class="form-group">
 
-                            <label>
+                            <label for="company">
                                 Company
                             </label>
 
                             <input
-                                id="company"
                                 type="text"
-                                placeholder="Company name"
+                                id="company"
+                                placeholder="e.g. Microsoft"
                                 required
                             >
 
                         </div>
 
 
+
+                        <!-- LOCATION -->
+
                         <div class="form-group">
 
-                            <label>
+                            <label for="location">
                                 Location
                             </label>
 
                             <input
-                                id="location"
                                 type="text"
-                                placeholder="e.g. Hyderabad"
+                                id="location"
+                                placeholder="e.g. Hyderabad / Remote"
                                 required
                             >
 
                         </div>
 
 
+
+                        <!-- SALARY -->
+
                         <div class="form-group">
 
-                            <label>
+                            <label for="salary">
                                 Salary
                             </label>
 
                             <input
-                                id="salary"
                                 type="text"
-                                placeholder="e.g. ₹8–12 LPA"
+                                id="salary"
+                                placeholder="e.g. ₹8 LPA - ₹12 LPA"
                             >
+
+                        </div>
+
+
+
+                        <!-- SKILLS -->
+
+                        <div class="form-group form-group-full">
+
+                            <label for="jobSkills">
+                                Required Skills
+                            </label>
+
+                            <input
+                                type="text"
+                                id="jobSkills"
+                                placeholder="e.g. JavaScript, React, SQL, Node.js"
+                            >
+
+                            <small>
+                                Separate multiple skills with commas.
+                            </small>
+
+                        </div>
+
+
+
+                        <!-- DESCRIPTION -->
+
+                        <div class="form-group form-group-full">
+
+                            <label for="jobDescription">
+                                Job Description
+                            </label>
+
+                            <textarea
+                                id="jobDescription"
+                                placeholder="Describe the role, responsibilities and requirements..."
+                                required
+                            ></textarea>
 
                         </div>
 
                     </div>
 
 
-                    <div class="form-group">
 
-                        <label>
-                            Job Description
-                        </label>
+                    <!-- MESSAGE -->
 
-                        <textarea
-                            id="jobDescription"
-                            rows="5"
-                            placeholder="Describe the role, responsibilities and requirements..."
-                            required
-                        ></textarea>
-
-                    </div>
+                    <div id="jobMessage"></div>
 
 
-                    <div class="form-group">
 
-                        <label>
-                            Required Skills
-                        </label>
-
-                        <input
-                            id="jobSkills"
-                            type="text"
-                            placeholder="JavaScript, React, SQL, Node.js"
-                        >
-
-                    </div>
-
+                    <!-- ACTIONS -->
 
                     <div class="form-actions">
 
                         <button
                             type="button"
-                            class="secondary-button"
+                            class="cancel-button"
                             onclick="closeJobForm()"
                         >
                             Cancel
@@ -310,41 +356,36 @@
 
                         <button
                             type="submit"
-                            class="post-job-button"
+                            class="submit-job-button"
                         >
-                            Publish Job
+                            Post Job
                         </button>
 
                     </div>
 
                 </form>
 
-                <div id="jobMessage"></div>
-
             </section>
+
 
 
             <!-- CURRENT JOBS -->
 
             <section class="recruiter-card">
 
-                <div class="recruiter-card-header">
+                <div class="card-header">
 
                     <div>
 
-                        <span class="section-label">
-                            JOB MANAGEMENT
-                        </span>
-
                         <h2>
-                            Your Job Openings
+                            Current Job Openings
                         </h2>
 
-                    </div>
+                        <p>
+                            Jobs currently available on the platform.
+                        </p>
 
-                    <a href="jobs.html">
-                        View Public Jobs →
-                    </a>
+                    </div>
 
                 </div>
 
@@ -355,7 +396,7 @@
                 >
 
                     <div class="recruiter-loading">
-                        Loading job openings...
+                        Loading jobs...
                     </div>
 
                 </div>
@@ -363,24 +404,21 @@
             </section>
 
 
+
             <!-- CANDIDATE MATCHING -->
 
             <section class="recruiter-card">
 
-                <div class="recruiter-card-header">
+                <div class="card-header">
 
                     <div>
 
-                        <span class="section-label">
-                            TALENT DISCOVERY
-                        </span>
-
                         <h2>
-                            Find Matching Candidates
+                            Candidate Matching
                         </h2>
 
                         <p>
-                            Match candidate skills with your job requirements.
+                            Search for candidates based on their skills.
                         </p>
 
                     </div>
@@ -391,16 +429,16 @@
                 <div class="candidate-search">
 
                     <input
-                        id="candidateSkill"
                         type="text"
-                        placeholder="Search candidates by skill..."
+                        id="candidateSkill"
+                        placeholder="Enter a skill, e.g. Java, React, SQL"
                     >
 
                     <button
+                        type="button"
                         onclick="searchCandidates()"
-                        class="post-job-button"
                     >
-                        Search
+                        Search Candidates
                     </button>
 
                 </div>
@@ -413,12 +451,16 @@
 
                     <div class="candidate-empty">
 
-                        <div>
+                        <div class="empty-icon">
                             👥
                         </div>
 
+                        <h3>
+                            Find skilled candidates
+                        </h3>
+
                         <p>
-                            Search for a skill to discover matching candidates.
+                            Enter a skill above to search for matching candidates.
                         </p>
 
                     </div>
@@ -427,9 +469,11 @@
 
             </section>
 
+
         </div>
 
     </main>
+
 
 
     <!-- FOOTER -->
@@ -440,82 +484,71 @@
 
             <div>
 
-                <div class="logo footer-logo">
-
-                    <span class="logo-icon">
-                        J
-                    </span>
-
-                    <span>
-                        JobMatch
-                    </span>
-
-                </div>
+                <h3>
+                    JobMatch
+                </h3>
 
                 <p>
-                    Connecting employers with skilled candidates.
+                    Connecting talent with opportunity
+                    through skill-based matching.
                 </p>
 
             </div>
 
-            <div class="footer-links">
 
-                <a href="index.html">
-                    Home
-                </a>
+            <div>
 
-                <a href="jobs.html">
-                    Jobs
-                </a>
-
-                <a href="profile.html">
-                    Candidate
-                </a>
+                <p>
+                    © 2026 JobMatch. All rights reserved.
+                </p>
 
             </div>
 
-        </div>
-
-        <div class="footer-bottom">
-            © 2026 JobMatch. All rights reserved.
         </div>
 
     </footer>
 
 
-    <script src="script.js"></script>
+
+    <!-- PAGE FUNCTIONS -->
 
     <script>
 
         function openJobForm() {
 
-            document.getElementById("jobForm").style.display = "block";
+            const form =
+                document.getElementById("jobForm");
 
-            document
-                .getElementById("jobForm")
-                .scrollIntoView({
-                    behavior: "smooth"
-                });
+            if (form) {
+
+                form.style.display = "block";
+
+                setTimeout(function () {
+
+                    const title =
+                        document.getElementById("jobTitle");
+
+                    if (title) {
+                        title.focus();
+                    }
+
+                }, 50);
+
+            }
 
         }
 
 
         function closeJobForm() {
 
-            document.getElementById("jobForm").style.display = "none";
+            const form =
+                document.getElementById("jobForm");
 
-        }
+            if (form) {
 
+                form.style.display = "none";
 
-        function submitJob(event) {
-
-            event.preventDefault();
-
-            const message =
-                document.getElementById("jobMessage");
-
-            message.innerHTML =
-                "<p class='form-notice'>Job posting form is ready. We will connect this to the recruiter API in the final functionality pass.</p>";
+            }
 
         }
 
@@ -529,25 +562,106 @@
                     .trim();
 
             const results =
-                document.getElementById("candidateResults");
+                document.getElementById(
+                    "candidateResults"
+                );
+
+            if (!results) {
+                return;
+            }
+
 
             if (!skill) {
 
-                results.innerHTML =
-                    "<div class='candidate-empty'><div>🔎</div><p>Enter a skill to search.</p></div>";
+                results.innerHTML = `
+
+                    <div class="candidate-empty">
+
+                        <div class="empty-icon">
+                            🔎
+                        </div>
+
+                        <h3>
+                            Enter a skill
+                        </h3>
+
+                        <p>
+                            Enter a skill to search for matching candidates.
+                        </p>
+
+                    </div>
+
+                `;
 
                 return;
 
             }
 
-            results.innerHTML =
-                "<div class='candidate-empty'><div>🔎</div><p>Candidate matching for <strong>" +
-                skill +
-                "</strong> will be connected to the candidate-skill API.</p></div>";
+
+            results.innerHTML = `
+
+                <div class="candidate-empty">
+
+                    <div class="empty-icon">
+                        🔎
+                    </div>
+
+                    <h3>
+                        Candidate search
+                    </h3>
+
+                    <p>
+                        Searching for candidates with
+                        <strong>${skill}</strong>.
+                    </p>
+
+                    <p>
+                        Candidate matching API will be connected next.
+                    </p>
+
+                </div>
+
+            `;
 
         }
 
+
+        document.addEventListener(
+            "DOMContentLoaded",
+            function () {
+
+                const form =
+                    document.getElementById(
+                        "postJobForm"
+                    );
+
+                if (form) {
+
+                    form.addEventListener(
+                        "keydown",
+                        function (event) {
+
+                            if (
+                                event.key === "Enter" &&
+                                event.target.tagName !== "TEXTAREA"
+                            ) {
+
+                                event.preventDefault();
+
+                            }
+
+                        }
+                    );
+
+                }
+
+            }
+        );
+
     </script>
+
+
+    <script src="script.js"></script>
 
 </body>
 
